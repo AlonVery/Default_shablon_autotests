@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+group = 'com.test'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.27.0' // Замените на актуальную версию
+    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+
+}
+
+test {
+    useJUnitPlatform()
+}
