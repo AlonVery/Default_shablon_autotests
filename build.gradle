@@ -13,13 +13,23 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+compileTestJava{
+    options.encoding = "UTF-8"
+}
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.27.0' // Замените на актуальную версию
-    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
-
+//    testImplementation platform('org.junit:junit-bom:5.10.0')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
+//    implementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.11.4'
+//    implementation 'org.seleniumhq.selenium:selenium-java:4.27.0' // Замените на актуальную версию
+//    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+//    implementation group: 'com.codeborne', name: 'selenide', version: '7.6.1'
+    // Selenium
+    implementation 'org.seleniumhq.selenium:selenium-java:4.13.0'
+    // Selenide
+    implementation 'com.codeborne:selenide:6.12.3'
+    // Logback for SLF4J
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
 }
 
 test {
